@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: hsl(0, 0%, 100%);
+  font-family: "Poppins", sans-serif;
+  margin-top: 10vh;
+  gap: 10px;
+}
+
+h1 {
+  color: hsl(234, 12%, 34%);
+}
+
+h2 {
+  color: hsl(234, 12%, 34%);
+  font-weight: 400;
+}
+
+p {
+  color: hsl(234, 12%, 34%);
+  font-weight: 400;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,51 @@
+$primaryColor:hsl(0, 0%, 100%);
+$secondColor:hsl(234, 12%, 34%);
+$cardColor:hsl(212, 6%, 44%);
+$redLine:hsl(0, 78%, 62%);
+$cyanLine:hsl(180, 62%, 55%);
+$blueLine:hsl(212, 86%, 64%);
+$yellowLine:hsl(34, 97%, 64%);
+
+$primaryFont: "Poppins", sans-serif;
+$fontBold:600;
+$fontLight:400;
+$fontSmall:200;
+
+
+@mixin flexCenter() {
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    @include flexCenter();
+    height: 100vh;
+    background-color: $primaryColor;
+    font-family: $primaryFont;
+    margin-top: 10vh;
+    gap: 10px;
+  }
+
+h1{
+  
+  color: $secondColor;
+
+}
+
+h2{
+  color: $secondColor;
+  font-weight: $fontLight;
+}
+
+p{
+  color: $secondColor;
+  font-weight: $fontLight;
+}
