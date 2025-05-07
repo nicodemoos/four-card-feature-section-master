@@ -14,9 +14,31 @@ $fontSmall:200;
 
 @mixin flexCenter() {
     display: flex;
-    
     align-items: center;
     flex-direction: column;
+  }
+  .card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1000px;
+  }
+
+@mixin card($borderColor) {
+    @include flexCenter();
+    padding: 50px;
+    width: 300px;
+    background-color: $primaryColor;
+    border-top: 4px solid $borderColor;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out; //transição suave
+    &:hover {
+      transform: scale(1.05); // ← efeito de "aumentar"
+    }
   }
   
   * {
@@ -48,4 +70,26 @@ h2{
 p{
   color: $secondColor;
   font-weight: $fontLight;
+}
+
+p.title{
+  
+}
+
+.team { 
+  @include card($redLine);
+}
+
+.supervisor { 
+  @include card($cyanLine); 
+  
+}
+
+
+.calculator { 
+  @include card($cyanLine); 
+}
+
+.karma { 
+  @include card($yellowLine); 
 }

@@ -1,3 +1,12 @@
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1000px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -27,4 +36,72 @@ h2 {
 p {
   color: hsl(234, 12%, 34%);
   font-weight: 400;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  width: 300px;
+  background-color: hsl(0, 0%, 100%);
+  border-top: 4px solid hsl(0, 78%, 62%);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+.team:hover {
+  transform: scale(1.05);
+}
+
+.supervisor {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  width: 300px;
+  background-color: hsl(0, 0%, 100%);
+  border-top: 4px solid hsl(180, 62%, 55%);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+.supervisor:hover {
+  transform: scale(1.05);
+}
+
+.calculator {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  width: 300px;
+  background-color: hsl(0, 0%, 100%);
+  border-top: 4px solid hsl(180, 62%, 55%);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+.calculator:hover {
+  transform: scale(1.05);
+}
+
+.karma {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  width: 300px;
+  background-color: hsl(0, 0%, 100%);
+  border-top: 4px solid hsl(34, 97%, 64%);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+.karma:hover {
+  transform: scale(1.05);
 }/*# sourceMappingURL=style.css.map */
