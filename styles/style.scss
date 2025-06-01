@@ -1,95 +1,146 @@
-$primaryColor:hsl(0, 0%, 100%);
-$secondColor:hsl(234, 12%, 34%);
-$cardColor:hsl(212, 6%, 44%);
-$redLine:hsl(0, 78%, 62%);
-$cyanLine:hsl(180, 62%, 55%);
-$blueLine:hsl(212, 86%, 64%);
-$yellowLine:hsl(34, 97%, 64%);
+$primaryColor: hsl(0, 0%, 100%);
+$secondColor: hsl(234, 12%, 34%);
+$cardColor: hsl(212, 6%, 44%);
+$redLine: hsl(0, 78%, 62%);
+$cyanLine: hsl(180, 62%, 55%);
+$blueLine: hsl(212, 86%, 64%);
+$yellowLine: hsl(34, 97%, 64%);
 
 $primaryFont: "Poppins", sans-serif;
-$fontBold:600;
-$fontLight:400;
-$fontSmall:200;
-
+$fontBold: 600;
+$fontLight: 400;
+$fontSmall: 200;
 
 @mixin flexCenter() {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  .card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-    max-width: 1000px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primaryColor;
+  font-family: $primaryFont;
+}
+
+.container {
+  @include flexCenter();
+  padding: 30px;
+
+}
+
+.card-grid {
+  display: grid;
+  gap: 40px;
+  padding: 40px;
+  grid-template-areas:
+    "supervisor team calculator"
+    "supervisor karma calculator";
+}
 
 @mixin card($borderColor) {
-    @include flexCenter();
-    padding: 50px;
-    width: 300px;
-    background-color: $primaryColor;
-    border-top: 4px solid $borderColor;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out; //transição suave
-    &:hover {
-      transform: scale(1.05); // ← efeito de "aumentar"
-    }
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    @include flexCenter();
-    height: 100vh;
-    background-color: $primaryColor;
-    font-family: $primaryFont;
-    margin-top: 10vh;
-    gap: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
+  padding: 30px;
+  background-color: $primaryColor;
+  border-top: 4px solid $borderColor;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out; //transição suave
 
-h1{
-  
-  color: $secondColor;
-
+  &:hover {
+    transform: scale(1.05); // ← efeito de "aumentar"
+  }
 }
 
-h2{
+h1 {
+  color: $secondColor;
+}
+
+h2 {
+  color: $secondColor;
+  font-weight: $fontSmall;
+  font-size: 35px;
+}
+
+p {
   color: $secondColor;
   font-weight: $fontLight;
+
 }
 
-p{
-  color: $secondColor;
-  font-weight: $fontLight;
+.title {
+  font-weight: $fontBold;
+  font-size: 30px;
 }
 
-p.title{
-  
+img {
+  display: flex;
+  align-self: flex-end;
+  margin-top: auto;
 }
 
-.team { 
+
+.team {
   @include card($redLine);
+  grid-area: team;
 }
 
-.supervisor { 
-  @include card($cyanLine); 
-  
+.supervisor {
+  @include card($cyanLine);
+  grid-area: supervisor;
+  margin-top: 100px;
 }
 
-
-.calculator { 
-  @include card($cyanLine); 
+.calculator {
+  @include card($blueLine);
+  grid-area: calculator;
+  margin-top: 100px;
 }
 
-.karma { 
-  @include card($yellowLine); 
+.karma {
+  @include card($yellowLine);
+  grid-area: karma;
+}
+
+@media (max-width: 600px) {
+
+  .container {
+    margin-top: 20px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-areas:
+      "supervisor"
+      "team"
+      "karma"
+      "calculator";
+  }
+
+  .supervisor {
+    margin-top: 0;
+  }
+
+  .calculator {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
 }
